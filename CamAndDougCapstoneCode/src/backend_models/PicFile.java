@@ -85,8 +85,8 @@ public class PicFile {
     public void setColor(int x, int y, Color c) {
         // For safety, you should check if x and y are within the proper range
         // of this.fileContent
-        if (x >= 0 || x <= this.fileContent.getWidth()) {
-            if (y >= 0 || y <= this.fileContent.getHeight()) {
+        if (x >= 0 || x <= 648) {
+            if (y >= 0 || y <= 1158) {
                 this.fileContent.setRGB(x, y, c.getRGB());
             }
         }
@@ -154,7 +154,7 @@ public class PicFile {
     private Random yCoord = new Random();
 
     public Point getRandomPoint() {
-        Point p = new Point(xCoord.nextInt(1151), yCoord.nextInt(647));
+        Point p = new Point(xCoord.nextInt(1153), yCoord.nextInt(648));
 //        if (!checkAndStore(p)) {
 //            p = getRandomPoint();
 //        }
@@ -168,53 +168,60 @@ public class PicFile {
     public Point pixelChooser() {
         if (used == true) {
             used = false;
-            left = true;
+            right = true;
             a += 1;
             return lastPoint;
         } 
 
         if (right == true) {
-            if (lastPoint.x + 3 <= fileContent.getWidth()) {
+            if (lastPoint.x + 3 < 1155) {
+                System.out.println("right");
                 newPoint = new Point(lastPoint.x + 3, lastPoint.y);
                 lastPoint = newPoint;
                 return newPoint;
             } else {
                 down = true;
                 right = false;
+                System.out.println("switch to down");
             }
         }
 
         if (down == true) {
-            if (lastPoint.y + 3 <= fileContent.getHeight()) {
+            if (lastPoint.y + 3 < 649) {
+                System.out.println("down");
                 newPoint = new Point(lastPoint.x, lastPoint.y + 3);
                 lastPoint = newPoint;
                 return newPoint;
             } else {
-
                 left = true;
                 down = false;
+                System.out.println("switch to left");
             }
         }
 
         if (left == true) {
-            if (lastPoint.y + 3 >= 0) {
+            if (lastPoint.x - 3 > -3) {
+                System.out.println("left");
                 newPoint = new Point(lastPoint.x - 3, lastPoint.y);
                 lastPoint = newPoint;
                 return newPoint;
             }else{
                 up = true;
                 left = false;
+                System.out.println("switch to up");
             }
         }
         
         if(up == true){
-            if(lastPoint.y + 3 >= 0){
+            if(lastPoint.y -3 > -3){
+                System.out.println("up");
                 newPoint = new Point(lastPoint.x, lastPoint.y - 3);
                 lastPoint = newPoint;
                 return newPoint;
             }else{
                 right = true;
-                up = false;                        
+                up = false;
+                System.out.println("switch to right");
             }
         }
         b += 1;

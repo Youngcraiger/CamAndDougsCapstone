@@ -220,7 +220,7 @@ public class ModelsAndViewsController {
         @Override
         public void actionPerformed(ActionEvent ae) {
             if (theBackendModel.thePicFile != null) {
-                for (int i = 0; i < (theBackendModel.thePicFile.getHeight() * theBackendModel.thePicFile.getWidth()); i++) {
+                for (int i = 0; i < (1158 * 648); i++) {
                     theBackendModel.thePicFile.randPaint();
                     theMainViewDisplay.updatePicContentField();
 
@@ -238,14 +238,14 @@ public class ModelsAndViewsController {
         @Override
         public void actionPerformed(ActionEvent ae) {
             if (theBackendModel.thePicFile != null) {
-                for (int i = 0; i < (theBackendModel.thePicFile.getHeight() * theBackendModel.thePicFile.getWidth()); i++) {
+                for (int i = 0; i < (1158 * 648); i++) {
 
                     //System.out.println("sorrtedPaintAction print line 1");
                     Point p = theBackendModel.thePicFile.pixelChooser();
                     //System.out.println("sorrtedPaintAction print line 2");
                     Color c = theBackendModel.thePicFile.getRandomColor();
-                    theBackendModel.thePicFile.setColor(p.x + 1, p.y, c);
                     theBackendModel.thePicFile.setColor(p.x, p.y + 1, c);
+                    theBackendModel.thePicFile.setColor(p.x + 1, p.y, c);
                     theBackendModel.thePicFile.setColor(p.x, p.y, c);
                     theBackendModel.thePicFile.setColor(p.x + 1, p.y + 1, c);
                     theBackendModel.thePicFile.setColor(p.x + 2, p.y + 2, c);
@@ -257,7 +257,7 @@ public class ModelsAndViewsController {
                     theMainViewDisplay.updatePicContentField();
                     //System.out.println("sorttedPaintAction print line 3");
                     f += 1;
-                    System.out.println(f);
+                    //System.out.println(f);
                 }
                 System.out.println("a:" + theBackendModel.thePicFile.a);
                 System.out.println("b:" + theBackendModel.thePicFile.b);
