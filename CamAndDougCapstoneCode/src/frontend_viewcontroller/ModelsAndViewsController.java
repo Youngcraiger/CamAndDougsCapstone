@@ -261,6 +261,12 @@ public class ModelsAndViewsController {
                 }
                 System.out.println("a:" + theBackendModel.thePicFile.a);
                 System.out.println("b:" + theBackendModel.thePicFile.b);
+                theBackendModel.thePicFile.c = 1155;
+                theBackendModel.thePicFile.d = 649;
+                theBackendModel.thePicFile.e = -3;
+                theBackendModel.thePicFile.f = -3;
+                theBackendModel.thePicFile.a = 0;
+                theBackendModel.thePicFile.b = 0;
             }
         }
     }

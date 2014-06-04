@@ -162,70 +162,65 @@ public class PicFile {
     }
    
     public Point lastPoint = new Point(0, 0), newPoint;
-    private boolean left = false, right = false, up = false, down = false, used = true;
-    public int a = 0;
-    public int b = 0;
+    private boolean left = false, right = true, up = false, down = false, used = true;
+    public int a = 0, b = 0, c = 1155, d = 649, e = -3, f = -3;
     public Point pixelChooser() {
-        if (used == true) {
-            used = false;
-            right = true;
-            a += 1;
-            return lastPoint;
-        } 
+//        if (used == true) {
+//            used = false;
+//            right = true;
+//            a += 1;
+//            return lastPoint;
+//        } 
 
         if (right == true) {
-            if (lastPoint.x + 3 < 1155) {
-                System.out.println("right");
+            if (lastPoint.x + 3 < c) {
                 newPoint = new Point(lastPoint.x + 3, lastPoint.y);
                 lastPoint = newPoint;
                 return newPoint;
             } else {
                 down = true;
                 right = false;
-                System.out.println("switch to down");
             }
         }
 
         if (down == true) {
-            if (lastPoint.y + 3 < 649) {
-                System.out.println("down");
+            if (lastPoint.y + 3 < d) {
                 newPoint = new Point(lastPoint.x, lastPoint.y + 3);
                 lastPoint = newPoint;
                 return newPoint;
             } else {
                 left = true;
                 down = false;
-                System.out.println("switch to left");
             }
         }
 
         if (left == true) {
-            if (lastPoint.x - 3 > -3) {
-                System.out.println("left");
+            if (lastPoint.x - 3 > e) {
                 newPoint = new Point(lastPoint.x - 3, lastPoint.y);
                 lastPoint = newPoint;
                 return newPoint;
             }else{
                 up = true;
                 left = false;
-                System.out.println("switch to up");
             }
         }
         
         if(up == true){
-            if(lastPoint.y -3 > -3){
-                System.out.println("up");
+            if(lastPoint.y -3 > f){
                 newPoint = new Point(lastPoint.x, lastPoint.y - 3);
                 lastPoint = newPoint;
                 return newPoint;
             }else{
                 right = true;
                 up = false;
-                System.out.println("switch to right");
+                c -= 3;
+                d-=3;
+                e+=3;
+                f+=3;
             }
         }
         b += 1;
-        Point p = new Point(35,90);
+        Point p = new Point(0,0);
         return p;
     }
 
