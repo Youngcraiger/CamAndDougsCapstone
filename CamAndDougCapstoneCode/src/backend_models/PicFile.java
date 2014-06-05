@@ -21,7 +21,19 @@ public class PicFile {
     // these are all the instance variables you need to have
     String path;
     BufferedImage fileContent;
+    Pixel daPixel;
     public Color color = Color.BLUE;
+    private Random randomNumber = new Random();
+    private Random xCoord = new Random();
+    private Random yCoord = new Random();
+    public Point lastPoint = new Point(0, 0), newPoint;
+    private boolean left = false, right = true, up = false, down = false, used = true;
+    public int a = 0, b = 0, c = 1155, d = 649, e = -3, f = -3;
+    private ArrayList<String> coordList = new ArrayList<String>();
+    private int coordIndex = 0;
+    private int colorIndex = 0;
+    private ArrayList<String> colorList = new ArrayList<String>();
+    private Pixel array[];
 
     // this constructor is completed for you
     public PicFile(String path) throws IOException {
@@ -144,7 +156,7 @@ public class PicFile {
 
         return image;
     }
-    private Random randomNumber = new Random();
+    
 
     public Color getRandomColor() {
         Color c = new Color(randomNumber.nextFloat(), randomNumber.nextFloat(), randomNumber.nextFloat());
@@ -155,8 +167,7 @@ public class PicFile {
         return c;
     }
 
-    private Random xCoord = new Random();
-    private Random yCoord = new Random();
+
 
     public Point getRandomPoint() {
         Point p = new Point(xCoord.nextInt(1153), yCoord.nextInt(648));
@@ -166,9 +177,7 @@ public class PicFile {
         return p;
     }
    
-    public Point lastPoint = new Point(0, 0), newPoint;
-    private boolean left = false, right = true, up = false, down = false, used = true;
-    public int a = 0, b = 0, c = 1155, d = 649, e = -3, f = -3;
+    
     public Point pixelChooser() {
 //        if (used == true) {
 //            used = false;
@@ -268,7 +277,7 @@ public class PicFile {
 //    private int getScreenHeight() {
 //        return 647;
 //    }
-    private ArrayList<String> coordList = new ArrayList<String>();
+
 
     private boolean checkCoord(Point p) {
         String s = p.getX() + "," + p.getY();
@@ -279,8 +288,7 @@ public class PicFile {
         }
         return true;
     }
-    private int coordIndex = 0;
-    private int colorIndex = 0;
+    
 
     private void storeCoord(Point p) {
         String s = p.getX() + " , " + p.getY();
@@ -288,8 +296,7 @@ public class PicFile {
         coordIndex += 1;
 
     }
-    private ArrayList<String> colorList = new ArrayList<String>();
-
+    
     public boolean checkColor(Color c) {
         String s = c.getRed() + "," + c.getGreen() + "," + c.getBlue();
         for (int i = 0; i < colorList.size(); i++) {

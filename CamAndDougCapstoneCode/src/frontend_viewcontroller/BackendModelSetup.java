@@ -25,7 +25,7 @@ public class BackendModelSetup {
 
     public BackendModelSetup() {
 
-        this.thePicFile = new PicFile(1155, 468);
+        this.thePicFile = new PicFile(1155, 651);
        
     }
 }
