@@ -14,10 +14,10 @@ import java.awt.image.BufferedImage;
  * @author Dugle_000
  */
 public class Pixel {
-    public int xCoord, yCoord;
+    public int x, y;
     Pixel(int x, int y){
-        this.xCoord = x;
-        this.yCoord = y;
+        this.x = x;
+        this.y = y;
     }
     
 }

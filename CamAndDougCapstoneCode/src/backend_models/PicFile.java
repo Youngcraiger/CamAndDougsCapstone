@@ -33,7 +33,7 @@ public class PicFile {
     private int coordIndex = 0;
     private int colorIndex = 0;
     private ArrayList<String> colorList = new ArrayList<String>();
-    private Pixel array[];
+    public Pixel pixelArray[] = new Pixel[1155*651];
 
     // this constructor is completed for you
     public PicFile(String path) throws IOException {
@@ -293,6 +293,7 @@ public class PicFile {
     private void storeCoord(Point p) {
         String s = p.getX() + " , " + p.getY();
         coordList.add(coordIndex, s);
+        pixelArray[coordIndex] = daPixel;
         coordIndex += 1;
 
     }
@@ -315,6 +316,7 @@ public class PicFile {
     public boolean checkAndStore(Point p) {
         if (checkCoord(p) == false) {
             storeCoord(p);
+            daPixel = new Pixel(p.x, p.y);            
             return true;
         } else {
             return false;
