@@ -275,7 +275,7 @@ public class MainViewDisplay extends JFrame {
 
         if (this.theBackendModel.thePicFile == null) {
 
-            this.picContentPane.setIcon(null);
+            this.picContentPane.setIcon(theBackendModel.thePicFile.getAsImageIcon());
 
         } else {
 

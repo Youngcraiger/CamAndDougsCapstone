@@ -28,6 +28,11 @@ public class PicFile {
         this.path = path;
         this.fileContent = readFile(path);
     }
+    
+    public PicFile(int w, int h){
+        this.path = null;
+        this.fileContent = new BufferedImage(w,h,BufferedImage.TYPE_INT_RGB);
+    }
 
     public int getWidth() {
         int i = fileContent.getWidth();
