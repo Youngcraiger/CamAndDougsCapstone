@@ -68,6 +68,7 @@ public class MainViewDisplay extends JFrame {
     JButton approxDecryptBttn;
     JLabel picContentPane;
     JButton sortedArtButton;
+    JButton gradArtButton;
 
     /*
      *
@@ -123,6 +124,9 @@ public class MainViewDisplay extends JFrame {
         
         this.sortedArtButton = new JButton();
         this.sortedArtButton.setText("Sort The Art");
+        
+        this.gradArtButton = new JButton();
+        this.gradArtButton.setText("Gradient Art");
 
         this.saveResultToFileButton = new JButton();
         this.saveResultToFileButton.setText("Save File");
@@ -192,66 +196,43 @@ public class MainViewDisplay extends JFrame {
         c.gridheight = 1;
         mainDisplayPane.add(this.picContentPane, c);
 
-//        c = new GridBagConstraints();
-//        c.gridx = 0;
-//        c.gridy = 1;
-//        c.gridwidth = 2;
-//        c.gridheight = 2;
-//        c.fill = GridBagConstraints.BOTH;
-//        c.ipady = 300;
-//        c.ipadx = 250;
-//        mainDisplayPane.add(this.textPane, c);
-
         c = new GridBagConstraints();
-        c.gridx = 2;
-        c.gridy = 0;
+        c.gridx = 4;
+        c.gridy = 1;
+        c.anchor = GridBagConstraints.NORTHEAST;
         c.gridwidth = 1;
         c.gridheight = 1;
         mainDisplayPane.add(this.openSourceFileButton, c);
 
         c = new GridBagConstraints();
-        c.gridx = 2;
-        c.gridy = 1;
+        c.gridx = 4;
+        c.gridy = 2;
         c.gridwidth = 1;
-        c.anchor = GridBagConstraints.LINE_START;
+        c.anchor = GridBagConstraints.NORTHEAST;
         c.gridheight = 1;
         c.weighty = 1;
         mainDisplayPane.add(this.startRandPaintButton, c);
 
         c = new GridBagConstraints();
-        c.gridx = 2;
-        c.gridy = 2;
+        c.gridx = 4;
+        c.gridy = 3;
+        c.anchor = GridBagConstraints.NORTHEAST;
         c.gridwidth = 1;
         c.gridheight = 1;
         mainDisplayPane.add(this.sortedArtButton, c);
         
-//        c = new GridBagConstraints();
-//        c.gridx = 3;
-//        c.gridy = 1;
-//        mainDisplayPane.add(this.probsBttn, c);
-
-//        c = new GridBagConstraints();
-//        c.gridx = 2;
-//        c.gridy = 3;
-//        c.anchor = GridBagConstraints.LINE_START;
-//        c.gridwidth = 1;
-//        c.gridheight = 1;
-//        c.weighty = 1;
-//        mainDisplayPane.add(this.decryptSourceButton, c);
-        
-//        c = new GridBagConstraints();
-//        c.gridx = 3;
-//        c.gridy = 3;
-//        mainDisplayPane.add(this.sortBttn, c);
-        
-//        c = new GridBagConstraints();
-//        c.gridx = 3;
-//        c.gridy = 6;
-//        mainDisplayPane.add(this.approxDecryptBttn, c);
-
         c = new GridBagConstraints();
-        c.gridx = 2;
-        c.gridy = 3;
+        c.gridx = 4;
+        c.gridy = 4;
+        c.anchor = GridBagConstraints.NORTHEAST;
+        c.gridwidth = 1;
+        c.gridheight = 1;
+        mainDisplayPane.add(this.gradArtButton, c);
+        
+        c = new GridBagConstraints();
+        c.gridx = 4;
+        c.gridy = 5;
+        c.anchor = GridBagConstraints.NORTHEAST;
         c.gridwidth = 1;
         c.gridheight = 1;
         mainDisplayPane.add(this.saveResultToFileButton, c);

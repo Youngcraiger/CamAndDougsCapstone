@@ -110,9 +110,9 @@ public class ModelsAndViewsController {
 
         @Override
         public void mouseDragged(MouseEvent e) {
-            System.out.print("mouse dragged");
-            Point p = mouseGetPoint(e);
-            theBackendModel.thePicFile.setColor(p.x, p.y, Color.red);
+//            System.out.print("mouse dragged");
+//            Point p = mouseGetPoint(e);
+//            theBackendModel.thePicFile.setColor(p.x, p.y, Color.red);
         }
 
         @Override
@@ -121,12 +121,10 @@ public class ModelsAndViewsController {
             mouseGetPoint(e);
         }
 
-        private Point mouseGetPoint(MouseEvent e) {
-            Point p = e.getPoint();
-            
-            
-            System.out.println(" x y: " + p.x + " " + p.y);
-            return p;
+        private void mouseGetPoint(MouseEvent e) {
+//            Point p = e.getPoint();            
+//            System.out.println(" x y: " + p.x + " " + p.y);
+//            return p;
         }
 
         private void paint(MouseEvent e) {
